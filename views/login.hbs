@@ -1,0 +1,48 @@
+
+{{>head}}
+
+<body>
+	<div class="main-w3layouts wrapper">
+		<h1>Login</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="/login" method="post">
+					<input class="text" type="text" name="username" placeholder="Usuario" required="">
+					<input class="text w3lpass" type="password" name="password" placeholder="Contraseña" required="">
+					{{#if signinMessage}}
+						{{#errorMessage signinMessage}}{{/errorMessage}}	
+					{{/if}}
+					{{#if signupMessage}}
+						{{#successMessage signupMessage}}{{/successMessage}}	
+					{{/if}}
+					<div class="wthree-text">
+					</div>
+					<input type="submit" value="ENTRAR">
+				</form>
+				<p>¿No tenes cuenta? <a href="/register"> Registrate!</a></p>
+			</div>
+		</div>
+	</div>
+</body>
+{{>scripts}}
+
+{{!-- test sockets 
+
+<script src="socket.io/socket.io.js"></script>
+<script>
+	
+	var socket = io();
+	
+	socket.on('connect', function(client){
+		console.log('Se realizo conexion con el backend');
+	});
+	
+	socket.emit('app', { message: 'new app' });
+
+	socket.on('disconnect', function(){
+		console.log('Se perdio conexion con el backend');
+	});
+
+</script> --}}
+
+</html>

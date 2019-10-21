@@ -1,0 +1,25 @@
+
+{{>head}}
+
+<body>
+	<div class="main-w3layouts wrapper">
+		<h1>Registrate</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="/register" method="post">
+					<input class="text w3lpass" type="text" name="username" placeholder="Usuario" required="" style="margin-top:0px;">
+					<input class="text w3lpass" type="password" name="password_1" placeholder="Contraseña" required="">
+					<input class="text w3lpass" type="password" name="password_2" placeholder="Confirmar Contraseña" required="">
+					<input class="text w3lpass" type="text" name="role" placeholder="Role" required="">
+					<input class="text w3lpass" type="text" name="place" placeholder="Place" required="">
+					{{#if signupMessage}}
+						<p style="background-color:brown; padding:10px;">{{signupMessage}}</p>	
+					{{/if}}
+					<input type="submit" value="REGISTRARSE">
+				</form>
+				<p>¿Ya tienes una cuenta? <a href="/"> Ingresa ahora!</a></p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
